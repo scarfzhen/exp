@@ -40,18 +40,12 @@ def portscanner(host_list, port):
                 s.close()
 def main():
     setdefaulttimeout(1)
-    h1 = ['10.229.6.110']
+    h1 = ['127.0.0.1']
     p1 = [21]
 
     portscanner(h1, p1)
     #portscanner(h2, p2)
     #portscanner(h3, p3)
-    #portscanner(h4, p4)
-    #portscanner(h5, p5)
-    #portscanner(h6, p6)
-    #portscanner(h7, p7)
-    #portscanner(h8, p8)
-    #portscanner(h9, p9)
 if __name__ == '__main__':
     main()
 ```
