@@ -11,9 +11,47 @@ os.remove(path="/filepath") # 用于删除文件
 ```
 
 ##### socket包
-看目标服务器DNS解析是否正常
+
 ```python
+# 看目标服务器DNS解析是否正常
 import socket
 dns_hostname = "baidu.com"
 ip = socket.gethostbyname(dns_hostname)
+```
+
+```python
+# 网络端口访问是否正常
+#!/usr/bin/python
+# coding=utf-8
+from socket import *
+def portscanner(host_list, port):
+    s = socket(AF_INET, SOCK_STREAM)    
+    for j in host_list:
+        for p in port:
+            try:
+                result_code = s.connect_ex((j, p))
+                if result_code == 0:
+                    print("[+] {0:16}{1:6} open".format(j, p))
+                else:
+                    print("\t[-] {0:16}{1:6} closed".format(j, p))
+            except Exception as e:
+                print(e)
+            finally:
+                s.close()
+def main():
+    setdefaulttimeout(1)
+    h1 = ['10.229.6.110']
+    p1 = [21]
+
+    portscanner(h1, p1)
+    #portscanner(h2, p2)
+    #portscanner(h3, p3)
+    #portscanner(h4, p4)
+    #portscanner(h5, p5)
+    #portscanner(h6, p6)
+    #portscanner(h7, p7)
+    #portscanner(h8, p8)
+    #portscanner(h9, p9)
+if __name__ == '__main__':
+    main()
 ```
