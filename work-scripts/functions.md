@@ -26,6 +26,7 @@ ip = socket.gethostbyname(dns_hostname)
 from socket import *
 def portscanner(host_list, port):
     s = socket(AF_INET, SOCK_STREAM)    
+    # AF_INET使用的是IPV4协议，SOCK_STREAM是指对应的协议是TCP,SOCK_DGRAM是指对应的协议是UDP
     for j in host_list:
         for p in port:
             try:
