@@ -78,3 +78,6 @@ func (ins *Instance) Gather(slist *types.SampleList) {
 	waitCommands.Wait()
 }
 ```
+
+#### 我有个脚本，在服务器本地手动执行是正常的，但是通过categraf执行的时候总是不正常；且用户都是root执行的，请问什么原因会造成这种现象
+脚本中的环境变量问题，categraf看到的环境变量跟本地手动执行看到的环境变量是不一样的；因此脚本中的命令要使用绝对路径避免这个问题
